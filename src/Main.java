@@ -11,10 +11,19 @@ public class Main {
 
         do{
             System.out.println("New order");
-
-            System.out.println("Choose your beverage (Espresso, Cappuccino, Americano)");
-            String beverageName = scanner.nextLine();
-
+            String beverageName = "";
+            boolean validBeverage = false;
+            while(!validBeverage) {
+                System.out.println("Choose your beverage (Espresso, Cappuccino, Americano)");
+                beverageName = scanner.nextLine().toLowerCase();
+                if(beverageName.equals("espresso") || beverageName.equals("cappuccino")|| beverageName.equals("americano")) {
+                    validBeverage = true;
+                }
+                else {
+                    System.out.println("Invalid beverage, choose a valide one");
+                }
+            }
+            
             System.out.println("Choose your beverage size(Small,Medium,Large):");
             Size size = Size.valueOf(scanner.nextLine().toUpperCase());
 
