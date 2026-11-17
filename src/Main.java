@@ -25,10 +25,41 @@ public class Main {
             }
             
             System.out.println("Choose your beverage size(Small,Medium,Large):");
-            Size size = Size.valueOf(scanner.nextLine().toUpperCase());
+
+            Size size = null;
+            boolean validSize = false;
+
+            while (!validSize) {
+
+                System.out.println("Choose your beverage size (Small, Medium, Large):");
+
+                String inputSize = scanner.nextLine().trim().toUpperCase();
+
+                try {
+                    size = Size.valueOf(inputSize);
+                    validSize = true;
+
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Invalid size, choose a valid one.");
+                }
+            }
 
             System.out.println("Choose your beverage temperature (Hot,Cold):");
-            Temperature temperature = Temperature.valueOf(scanner.nextLine().toUpperCase());
+
+            Temperature temperature = null;
+            boolean validTemperature = false;
+
+            while (!validTemperature) {
+                System.out.println("Choose your beverage temperature (Hot, Cold):");
+                String inputTemperature = scanner.nextLine().trim().toUpperCase(Locale.ROOT);
+
+                try {
+                    temperature = Temperature.valueOf(inputTemperature);
+                    validTemperature = true;
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Invalid temperature, choose a valid one.");
+                }
+            }
 
             System.out.println("Choose the discount for the client (Normal, Student, Employee)");
             String discount = scanner.nextLine().toLowerCase();
