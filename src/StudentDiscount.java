@@ -1,6 +1,6 @@
 public class StudentDiscount implements PaymentStrategy {
     @Override
-    public double calculatePrice(double basePrice){
+    public double calculateDiscount(double basePrice){
         return basePrice*0.85;
     }
     @Override
