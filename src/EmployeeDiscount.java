@@ -1,6 +1,6 @@
 public class EmployeeDiscount implements PaymentStrategy{
     @Override
-    public double calculatePrice(double basePrice) {
+    public double calculateDiscount(double basePrice) {
         return basePrice * 0.65;
     }
     @Override

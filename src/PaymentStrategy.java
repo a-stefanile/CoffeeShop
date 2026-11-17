@@ -1,5 +1,5 @@
 public interface PaymentStrategy {
-    double calculatePrice(double basePrice);
+    double calculateDiscount(double basePrice);
     String getDescription();
 }
 
