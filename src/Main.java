@@ -85,7 +85,7 @@ public class Main {
             System.out.println("Order created");
             order.orderDetails();
 
-            System.out.println("Do you want to add another order? (s/n): ");
+            System.out.println("Do you want to add another order? (y/n): ");
             String choice = scanner.nextLine();
             if (choice.equals("n")){
                 isOpen = false;
