@@ -36,6 +36,11 @@ public abstract class Beverage {
         double price = basePrice;
 
         switch (size) {
+
+            case SMALL:
+                price += 0.00;
+                break;
+
             case MEDIUM:
                 price += 0.30;
                 break;
@@ -43,12 +48,28 @@ public abstract class Beverage {
             case LARGE:
                 price += 0.60;
                 break;
+
+            default:
+                throw new IllegalArgumentException(
+                        "Dimensione non valida");
         }
 
-        if (temperature == Temperature.COLD) {
-            price += 0.30;
+        switch (temperature) {
+
+            case HOT:
+                price += 0.00;
+                break;
+
+            case COLD:
+                price += 0.30;
+                break;
+
+            default:
+                throw new IllegalArgumentException(
+                        "Temperatura non valida");
+
         }
 
-        return price;
+                return price;
+        }
     }
-}
